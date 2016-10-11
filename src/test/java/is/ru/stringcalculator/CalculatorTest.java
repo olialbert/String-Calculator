@@ -1,9 +1,13 @@
 package is.ru.stringcalculator;
 
-public class Calculator {
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+public class CalculatorTest {
 	
-	public static int Add((string numbers){
-		return 0;
+	@Test
+	public void testEmptyString(){
+		assertEquals(0,Calculator add(""));
 	}
 
 
