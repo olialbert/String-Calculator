@@ -19,5 +19,10 @@ public class CalculatorTest {
 	public void testTwoNumber(){
 		assertEquals(3, Calculator.Add("1,2"));
 	}
+	
+	@Test
+	public void testUnknownNumber(){
+		assertEquals(6, Calculator.Add("1,2,3"));
+	}
 
 }
