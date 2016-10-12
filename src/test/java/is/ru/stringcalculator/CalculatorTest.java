@@ -24,5 +24,9 @@ public class CalculatorTest {
 	public void testUnknownNumber(){
 		assertEquals(6, Calculator.Add("1,2,3"));
 	}
-
+	
+	@Test
+	public void testNewLineDilimitedNumber(){
+		assertEquals(6, Calculator.Add("1\n2,3"));
+	}
 }

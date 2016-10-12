@@ -10,7 +10,7 @@ public class Calculator {
 			if(numbers.equals(""))
 				return new String[0];
 			else 
-				return numbers.split(",");
+				return numbers.split(",|\n");
 		}
 		
 		private static int getSum(String[] allNumbers){
