@@ -2,7 +2,7 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 	
-	public static int Add(String numbers){
+	public static int Add(String numbers) throws Exception{
 		return getSum(getAllNumbers(numbers));
 		
 	}
@@ -13,7 +13,13 @@ public class Calculator {
 				return numbers.split(",|\n");
 		}
 		
-		private static int getSum(String[] allNumbers){
+		private static int getSum(String[] allNumbers) throws Exception{
+			for(String number : allNumbers){
+				if(toInt(number) < 0){
+				  throw new IllegalArgumentException("Negatives not allowed: ");
+				}
+			}
+			
 			int sum = 0;
 			for(String number : allNumbers)
 				sum += toInt(number);

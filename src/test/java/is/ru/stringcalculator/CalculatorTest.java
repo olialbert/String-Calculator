@@ -6,27 +6,32 @@ import org.junit.Test;
 public class CalculatorTest {
 	
 	@Test
-	public void testEmptyString(){
+	public void testEmptyString() throws Exception {
 		assertEquals(0, Calculator.Add(""));
 	}
 	
 	@Test
-	public void testOneNumber(){
+	public void testOneNumber() throws Exception{
 		assertEquals(1, Calculator.Add("1"));
 	}
 	
 	@Test
-	public void testTwoNumber(){
+	public void testTwoNumber() throws Exception{
 		assertEquals(3, Calculator.Add("1,2"));
 	}
 	
 	@Test
-	public void testUnknownNumber(){
+	public void testUnknownNumber() throws Exception{
 		assertEquals(6, Calculator.Add("1,2,3"));
 	}
 	
 	@Test
-	public void testNewLineDilimitedNumber(){
+	public void testNewLineDilimitedNumber() throws Exception {
 		assertEquals(6, Calculator.Add("1\n2,3"));
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void negativeNumberWillThrowException() throws Exception{
+		Calculator.Add("-1");
 	}
 }
