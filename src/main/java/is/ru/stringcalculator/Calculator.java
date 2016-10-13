@@ -16,13 +16,17 @@ public class Calculator {
 		private static int getSum(String[] allNumbers) throws Exception{
 			for(String number : allNumbers){
 				if(toInt(number) < 0){
-				  throw new IllegalArgumentException("Negatives not allowed: ");
+				  throw new IllegalArgumentException("Negatives not allowed: " + toInt(number));
 				}
 			}
 			
 			int sum = 0;
-			for(String number : allNumbers)
-				sum += toInt(number);
+			for(String number : allNumbers){
+				if(toInt(number) <= 1000){
+					sum += toInt(number);
+				}
+				
+		    }
 			return sum;
 		}
 		

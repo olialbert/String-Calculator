@@ -21,17 +21,24 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void testUnknownNumber() throws Exception{
+	public void testUnknownNumber() throws Exception {
 		assertEquals(6, Calculator.Add("1,2,3"));
 	}
 	
 	@Test
-	public void testNewLineDilimitedNumber() throws Exception {
+	public void testNewLineDilimitedNumber() throws Exception  {
 		assertEquals(6, Calculator.Add("1\n2,3"));
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
 	public void negativeNumberWillThrowException() throws Exception{
 		Calculator.Add("-1");
+		Calculator.Add("2, -4, 3, -5");
 	}
-}
+	
+	@Test
+	public void NumGreaterThan1000AreIgnored() throws Exception {
+		assertEquals(20, Calculator.Add("10,10,1010"));
+	}
+	
+}	
