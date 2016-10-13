@@ -20,20 +20,23 @@ public class Calculator {
 				}
 			}
 			
-			int sum = 0;
-			for(String number : allNumbers){
-				if(toInt(number) <= 1000){
-					sum += toInt(number);
-				}
+			
+			return NoNegNumbers(allNumbers);
 				
-		    }
-			return sum;
 		}
 		
 		private static int toInt(String numbers){
 			return Integer.parseInt(numbers);
 		}
 	
-
+		private static int NoNegNumbers(String[] allNumbers){
+			int sum = 0;
+			for(String number : allNumbers){
+				if(toInt(number) <= 1000){
+					sum += toInt(number);
+				}	
+		    }
+			return sum;
+		}
 
 }

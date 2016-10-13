@@ -40,5 +40,9 @@ public class CalculatorTest {
 	public void NumGreaterThan1000AreIgnored() throws Exception {
 		assertEquals(20, Calculator.Add("10,10,1010"));
 	}
-	
+	/*
+	@Test
+	public void DifferentDelimiter() throws Exception {
+		assertEquals(8, Calculator.Add("//;\n4;4"));
+	}*/
 }	
