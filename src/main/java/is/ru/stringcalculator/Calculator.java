@@ -3,10 +3,10 @@ package is.ru.stringcalculator;
 public class Calculator {
 	private static String delimiters = (",|\n");
 	public static int Add(String numbers) throws Exception{
-		return getSum(getAllNumbers(numbers));
+		return getSum(splitNumbers(numbers));
 		
 	}
-		private static String[] getAllNumbers(String numbers){
+		private static String[] splitNumbers(String numbers){
 			if(numbers.equals(""))
 				return new String[0];
 			else if(numbers.contains("//")){
