@@ -26,7 +26,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void testNewLineDilimitedNumber() throws Exception  {
+	public void testNewLineDilimitedNumber() throws Exception   {
 		assertEquals(6, Calculator.Add("1\n2,3"));
 	}
 	

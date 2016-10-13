@@ -1,7 +1,7 @@
 package is.ru.stringcalculator;
 
 public class Calculator {
-	
+	private static String delimiters = (",|\n");
 	public static int Add(String numbers) throws Exception{
 		return getSum(getAllNumbers(numbers));
 		
@@ -9,8 +9,12 @@ public class Calculator {
 		private static String[] getAllNumbers(String numbers){
 			if(numbers.equals(""))
 				return new String[0];
-			else 
-				return numbers.split(",|\n");
+			else if(numbers.contains("//")){
+				String[] split = numbers.split("\n");
+				delimiters = split[0].substring(2);
+				return split[1].split(delimiters);
+			}
+				return numbers.split(delimiters);
 		}
 		
 		private static int getSum(String[] allNumbers) throws Exception{
